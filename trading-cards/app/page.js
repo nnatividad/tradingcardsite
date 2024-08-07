@@ -8,7 +8,7 @@ export default function Home() {
       <Navbar />
       <div className="content">
         <h1>Welcome to tcgdex</h1>
-        <p>tcgdex is a trading card game marketplace where you can buy, sell, and trade cards with other players.</p>
+        <p>tcgdex is your guide to finding accurate and up-to-date prices for trading cards.</p>
         <p>Sign in or create an account to get started!</p>
       </div>
     </div>

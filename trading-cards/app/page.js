@@ -4,9 +4,9 @@ import Navbar from './components/navbar.js';
 
 export default function Home() {
   return (
-    <div className="page">
+    <div id="page">
       <Navbar />
-      <div className="content">
+      <div id="content">
         <h1>Welcome to tcgdex</h1>
         <p>tcgdex is your guide to finding accurate and up-to-date prices for trading cards.</p>
         <p>Sign in or create an account to get started!</p>

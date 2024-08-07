@@ -3,7 +3,7 @@ import './navbar.css';
 
 export default function NavBar() {
     return(
-        <nav className="navbar">
+        <nav id="navbar">
             <div className="navbar-left">
                 <a href="/" className="navbar-brand"><h1>tcgdex</h1></a>
             </div>

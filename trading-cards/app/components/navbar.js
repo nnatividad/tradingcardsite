@@ -5,7 +5,7 @@ export default function NavBar() {
     return(
         <nav id="navbar">
             <div className="navbar-left">
-                <a href="/" className="navbar-brand"><h1>tcgdex</h1></a>
+                <a href="/" className="navbar-brand"><h1>Decks</h1></a>
             </div>
             <div className="navbar-center">
                     <input className="text" placeholder="Search..."/>

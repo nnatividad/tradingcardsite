@@ -4,6 +4,10 @@ import DataTable from 'react-data-table-component';
 
 const columns = [
     {
+        name: 'image',
+        cell: row => <img src={row.image} />,
+    },
+    {
         name: 'Name',
         selector: row => row.name,
     },
@@ -28,6 +32,7 @@ export default function Table() {
             columns={columns}
             data={data}
             noHeader
+            pagination
         />
     );
 };

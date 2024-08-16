@@ -17,7 +17,7 @@ export default function Table() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('/api/create-151-set/pokemon')
+        fetch('/api/create-151-set')
             .then(response => response.json())
             .then(data => setData(data.pokemonInfo))
             .catch(error => console.error('Error fetching data:', error));

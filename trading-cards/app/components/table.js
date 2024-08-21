@@ -1,23 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './table.css';
-import DataTable from 'react-data-table-component';
 
-const columns = [
-    {
-        name: 'image',
-        cell: row => <img src={row.image} />,
-    },
-    {
-        name: 'Name',
-        selector: row => row.name,
-    },
-    {
-        name: 'Ungraded',
-        selector: row => row.ungraded_price,
-    },
-];
-
-export default function Table() {
+export default function Table(props) {
+    const {cards} = props;
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -28,11 +13,25 @@ export default function Table() {
     }, []);
 
     return (
-        <DataTable
-            columns={columns}
-            data={data}
-            noHeader
-            pagination
-        />
+        <div id = "container">
+            <table className="table">
+            <thead>
+                <tr>
+                    <th>Card</th>
+                    <th>Name</th>
+                    <th>Ungraded Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {data.map((pokemon) => (
+                    <tr key={pokemon.id}>
+                        <td><a><img src={pokemon.image} alt={pokemon.name} /></a></td>
+                        <td>{pokemon.name}</td>
+                        <td>{pokemon.ungraded_price}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+        </div>
     );
 };

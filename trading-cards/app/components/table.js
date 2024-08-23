@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './table.css';
 
 export default function Table(props) {
@@ -12,6 +12,16 @@ export default function Table(props) {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    const itemsPerPage = 25;
+    const [page, setPage] = useState(1);
+    const displayData = useMemo(() => {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        return data.slice(start, end);
+    }, [data,page]);
+
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+
     return (
         <div id = "container">
             <table className="table">
@@ -23,7 +33,7 @@ export default function Table(props) {
                 </tr>
             </thead>
             <tbody>
-                {data.map((pokemon) => (
+                {displayData.map((pokemon) => (
                     <tr key={pokemon.id}>
                         <td><a><img src={pokemon.image} alt={pokemon.name} /></a></td>
                         <td>{pokemon.name}</td>
@@ -32,6 +42,10 @@ export default function Table(props) {
                 ))}
             </tbody>
         </table>
+        <div className="pagination">
+            <button onClick={() => setPage(page + 1)}disabled={page === totalPages}> Next Page </button>
+            <button onClick={() => setPage(page - 1)}disabled={page === 1}> Prev Page </button>
+        </div>
         </div>
     );
 };

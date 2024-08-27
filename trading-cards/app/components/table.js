@@ -43,8 +43,8 @@ export default function Table(props) {
             </tbody>
         </table>
         <div className="pagination">
-            <button onClick={() => setPage(page + 1)}disabled={page === totalPages}> Next Page </button>
             <button onClick={() => setPage(page - 1)}disabled={page === 1}> Prev Page </button>
+            <button onClick={() => setPage(page + 1)}disabled={page === totalPages}> Next Page </button>
         </div>
         </div>
     );

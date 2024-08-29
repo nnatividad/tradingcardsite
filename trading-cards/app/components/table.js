@@ -30,6 +30,8 @@ export default function Table(props) {
                     <th>Card</th>
                     <th>Name</th>
                     <th>Ungraded Price</th>
+                    <th>Grade Nine</th>
+                    <th>PSA Ten</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +40,8 @@ export default function Table(props) {
                         <td><a><img src={pokemon.image} alt={pokemon.name} /></a></td>
                         <td>{pokemon.name}</td>
                         <td>{pokemon.ungraded_price}</td>
+                        <td>{pokemon.grade_nine}</td>
+                        <td>{pokemon.psa_ten}</td>
                     </tr>
                 ))}
             </tbody>

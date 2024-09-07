@@ -1,7 +1,7 @@
 #navbar{
     display: flex;
     border-style: solid;
-    border-width: medium;
+    border-width: small;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

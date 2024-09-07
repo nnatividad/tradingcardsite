@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './table.css';
 
+function FilterTable(){
+    return(
+        <div className = "filter-container">
+            <h1>Filter Place Holder</h1>
+        </div>
+    );
+}
+
+
 export default function Table(props) {
     const {cards} = props;
     const [data, setData] = useState([]);
@@ -24,6 +33,7 @@ export default function Table(props) {
 
     return (
         <div id = "container">
+            <FilterTable/>
             <table className="table">
             <thead>
                 <tr>

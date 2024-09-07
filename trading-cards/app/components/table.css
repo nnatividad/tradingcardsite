@@ -7,13 +7,14 @@
 
 .table {
     width: 80%; /* Adjust the table width to its content */
+    border-width: small;
     border-collapse: collapse;
     margin-bottom: 20px; /* Add some space between the table and the pagination */
 }
 
 .table th, .table td {
     border: 1px solid black;
-    padding: 8px;
+    padding: 10px 20px;
     text-align: center;
 }
 

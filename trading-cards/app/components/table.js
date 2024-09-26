@@ -28,7 +28,6 @@ export default function Table() {
 
     function filterData(filter){//function to filter data based on filter value
         let sortedData = [...data]; //copy of data array
-        console.log(sortedData);
         if(filter === 'name'){
             sortedData.sort((a,b) => { //extra null value is caused by null values from other values
                let nameA;
@@ -71,7 +70,6 @@ export default function Table() {
             })
         }
         sortedData = sortedData.filter(item => item !== null && item !== undefined);
-        console.log(sortedData);
         setData(sortedData);
     }
 
